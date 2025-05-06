@@ -1,16 +1,15 @@
-import './App.css'
-import Recipe from './Recipe'
-import recipesData from './recipes.json'
+import Recipe from './Recipe';
+import recipesData from './recipes.json'; // or fetch if in public folder
 
 function App() {
-
+  
   return (
-    <>
-      {recipesData.map((recipe, index) => {
-        <Recipe key={index} recipe={recipe}/>
-      })}
-    </>
-  )
+    <div>
+      {recipesData.map((recipe, index) => (
+        <Recipe key={index} recipe={recipe} />
+      ))}
+    </div>
+  );
 }
 
 export default App;

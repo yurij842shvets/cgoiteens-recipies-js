@@ -1,20 +1,21 @@
-import RecipeInfo from "./RecipeInfo";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import RecipeInfo from './RecipeInfo';
 
 export default function Recipe({ recipe }) {
   const { name, time, servings, calories, difficulty, image } = recipe;
+
   return (
-    <>
-      <h1>Recipe</h1>
-      <p>{name}</p>
-      <img src={image} alt="image" />
-      <RecipeInfo text={`${time}`} />
-      <RecipeInfo text={`${servings}`} />
-      <RecipeInfo text={`${calories}`} />
-      <RecipeInfo text={`${difficulty}`} />
-    </>
+    <div>
+      <h2>{name}</h2>
+      <img src={image} alt={name} width="300" />
+      <RecipeInfo text={`${time} min`}  />
+      <RecipeInfo text={`${servings} servings`}  />
+      <RecipeInfo text={`${calories} kcal`}  />
+      <RecipeInfo text={`Difficulty: ${difficulty}`}  />
+    </div>
   );
 }
+
 Recipe.propTypes = {
   recipe: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -24,4 +25,5 @@ Recipe.propTypes = {
     difficulty: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
+  
 };

@@ -13,26 +13,27 @@ export default function Recipe({ recipe, icon }) {
     color: blue;
     background-color: rgb(139, 247, 247);
   `;
-  const Container = styled.div``;
+  const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;`;
 
-  const Title = styled.h1`
-    font-size: 180px;`
   return (
     <>
       <Container>
         <div className="text-image">
-          <Title>Hello</Title>
           <p>{name}</p>
           <img src={image} alt="image" width="300" />
         </div>
 
         <div className="recipe-info">
           <StyleTime>
-            <RecipeInfo text={time} icon={icon.time} />
+            <RecipeInfo text={`${time} min`} icon={icon.time} />
           </StyleTime>
-          <RecipeInfo text={servings} />
+          <RecipeInfo text={`${servings} servings`} />
           <StyleCalories>
-            <RecipeInfo text={calories} icon={icon.calories} />
+            <RecipeInfo text={`${calories} calories`} icon={icon.calories} />
           </StyleCalories>
           <RecipeInfo text={difficulty} />
         </div>

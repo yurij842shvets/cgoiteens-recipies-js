@@ -6,25 +6,32 @@ export default function Recipe({ recipe, icon }) {
 
   const StyleCalories = styled.p`
     color: red;
-    background-color: rgb(247, 139, 139);
-    font-size: 20px;
   `;
   const StyleTime = styled.p`
-    color: blue;
-    background-color: rgb(139, 247, 247);
+    color: blue
   `;
   const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;`;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .recipe-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 32px;
+      background-color: #fff;
+      border-radius: 35px;
+      width: 300px;
+    }
+  `;
 
   return (
     <>
       <Container>
         <div className="text-image">
-          <p>{name}</p>
           <img src={image} alt="image" width="300" />
+          <p>{name}</p>
         </div>
 
         <div className="recipe-info">
@@ -35,8 +42,9 @@ export default function Recipe({ recipe, icon }) {
           <StyleCalories>
             <RecipeInfo text={`${calories} calories`} icon={icon.calories} />
           </StyleCalories>
-          <RecipeInfo text={difficulty} />
         </div>
+
+        <RecipeInfo text={difficulty} />
       </Container>
     </>
   );

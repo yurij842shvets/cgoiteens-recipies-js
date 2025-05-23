@@ -4,14 +4,14 @@ import { IoTimer } from "react-icons/io5";
 import { FaFire } from "react-icons/fa6";
 import styled from "styled-components";
 
-function App() {
-  const RowDirection = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-  `;
+const RowDirection = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 32px;
+`;
 
+function App() {
   let iconsData = {
     time: <IoTimer />,
     calories: <FaFire />,

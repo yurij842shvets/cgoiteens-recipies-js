@@ -11,8 +11,9 @@ export default function Recipe({ recipe, icon }) {
     border-radius: 35px;
   `;
 
-  const Title = styled.p`
+  const RecipeTitle = styled.p`
     text-align: center;
+    font-weight: bold;
   `;
 
   const StyleCalories = styled.p`
@@ -43,7 +44,7 @@ export default function Recipe({ recipe, icon }) {
       <Container>
         <div className="text-image">
           <ImageStyles src={image} alt="image" />
-          <Title>{name}</Title>
+          <RecipeTitle>{name}</RecipeTitle>
         </div>
 
         <div className="recipe-info">

@@ -68,7 +68,7 @@ Recipe.propTypes = {
     time: PropTypes.string.isRequired,
     servings: PropTypes.number.isRequired,
     calories: PropTypes.number.isRequired,
-    difficulty: PropTypes.string.isRequired,
+    difficulty: PropTypes.oneOf([0,1,2]).isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
   icon: PropTypes.shape({

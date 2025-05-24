@@ -38,7 +38,7 @@ export default function Difficulty({ difficulty }) {
       <DifficultyTitleStyles>Difficulty</DifficultyTitleStyles>
       <LevelsStyles>
         {levels.map((level, index) => (
-          <Level key={index} active={level === difficulty}>
+          <Level key={index} active={index === difficulty}>
             {level}
           </Level>
         ))}
